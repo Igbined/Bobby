@@ -1,1093 +1,327 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel Balaș — Official Fan Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-–gold: #C9A84C;
-–gold-light: #E8C97A;
-–gold-pale: #F5E9C8;
-–obsidian: #0B0B0F;
-–obsidian-2: #111118;
-–obsidian-3: #1A1A24;
-–obsidian-4: #22222E;
-–ivory: #F8F3E8;
-–ivory-dim: #D9D0BE;
-–crimson: #8B1A2A;
-–royal-purple: #2D1B4E;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-background: var(–obsidian);
-color: var(–ivory);
-font-family: ‘Raleway’, sans-serif;
-overflow-x: hidden;
-cursor: default;
-}
-
-body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 0;
-opacity: 0.4;
-}
-
-.divider {
-display: flex;
-align-items: center;
-gap: 16px;
-justify-content: center;
-margin: 0 auto 3rem;
-width: fit-content;
-}
-.divider::before, .divider::after {
-content: ‘’;
-width: 80px;
-height: 1px;
-background: linear-gradient(90deg, transparent, var(–gold));
-}
-.divider::after { background: linear-gradient(90deg, var(–gold), transparent); }
-.divider-gem {
-width: 8px;
-height: 8px;
-background: var(–gold);
-transform: rotate(45deg);
-box-shadow: 0 0 12px var(–gold);
-}
-
-nav {
-position: fixed;
-top: 0; left: 0; right: 0;
-z-index: 100;
-padding: 20px 60px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: linear-gradient(180deg, rgba(11,11,15,0.95) 0%, transparent 100%);
-backdrop-filter: blur(8px);
-border-bottom: 1px solid rgba(201,168,76,0.15);
-}
-.nav-logo {
-font-family: ‘Cinzel’, serif;
-font-size: 1.1rem;
-font-weight: 700;
-color: var(–gold);
-letter-spacing: 0.2em;
-text-transform: uppercase;
-}
-.nav-links {
-display: flex;
-gap: 36px;
-list-style: none;
-}
-.nav-links a {
-font-family: ‘Raleway’, sans-serif;
-font-size: 0.75rem;
-font-weight: 600;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(–ivory-dim);
-text-decoration: none;
-transition: color 0.3s;
-position: relative;
-}
-.nav-links a::after {
-content: ‘’;
-position: absolute;
-bottom: -4px; left: 0;
-width: 0; height: 1px;
-background: var(–gold);
-transition: width 0.3s;
-}
-.nav-links a:hover { color: var(–gold); }
-.nav-links a:hover::after { width: 100%; }
-
-#hero {
-min-height: 100vh;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-}
-
-.hero-bg {
-position: absolute;
-inset: 0;
-background:
-radial-gradient(ellipse 60% 80% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
-radial-gradient(ellipse 40% 40% at 80% 60%, rgba(45,27,78,0.4) 0%, transparent 60%),
-radial-gradient(ellipse 50% 60% at 20% 40%, rgba(139,26,42,0.12) 0%, transparent 60%),
-var(–obsidian);
-}
-
-.hero-pattern {
-position: absolute;
-inset: 0;
-opacity: 0.03;
-background-image: repeating-linear-gradient(
-45deg,
-var(–gold) 0px, var(–gold) 1px,
-transparent 1px, transparent 40px
-), repeating-linear-gradient(
--45deg,
-var(–gold) 0px, var(–gold) 1px,
-transparent 1px, transparent 40px
-);
-}
-
-.hero-content {
-position: relative;
-z-index: 2;
-text-align: center;
-padding: 120px 40px 80px;
-max-width: 900px;
-animation: heroReveal 1.2s ease both;
-}
-
-@keyframes heroReveal {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-crown {
-font-size: 2.2rem;
-margin-bottom: 1.5rem;
-color: var(–gold);
-animation: float 4s ease-in-out infinite;
-filter: drop-shadow(0 0 20px rgba(201,168,76,0.6));
-}
-
-@keyframes float {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-}
-
-.hero-eyebrow {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.4em;
-color: var(–gold);
-text-transform: uppercase;
-margin-bottom: 1.2rem;
-opacity: 0.9;
-}
-
-.hero-title {
-font-family: ‘Cinzel’, serif;
-font-size: clamp(3.5rem, 9vw, 7.5rem);
-font-weight: 900;
-line-height: 0.95;
-color: var(–ivory);
-text-transform: uppercase;
-letter-spacing: 0.05em;
-margin-bottom: 0.3rem;
-}
-
-.hero-title span {
-display: block;
-background: linear-gradient(135deg, var(–gold-light) 0%, var(–gold) 40%, #A07830 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-filter: drop-shadow(0 2px 20px rgba(201,168,76,0.3));
-}
-
-.hero-subtitle {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-font-style: italic;
-font-weight: 300;
-color: var(–ivory-dim);
-margin: 1.5rem 0 2.5rem;
-letter-spacing: 0.05em;
-}
-
-.hero-cta-group {
-display: flex;
-gap: 16px;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 2rem;
-}
-
-.btn-royal {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-padding: 16px 36px;
-border: none;
-cursor: pointer;
-text-decoration: none;
-display: inline-block;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-
-.btn-royal.primary {
-background: linear-gradient(135deg, var(–gold-light), var(–gold), #8B6914);
-color: var(–obsidian);
-clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-}
-.btn-royal.primary::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
-opacity: 0;
-transition: opacity 0.3s;
-}
-.btn-royal.primary:hover::before { opacity: 1; }
-.btn-royal.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.4); }
-
-.btn-royal.ghost {
-background: transparent;
-color: var(–gold);
-border: 1px solid rgba(201,168,76,0.5);
-clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-}
-.btn-royal.ghost:hover {
-background: rgba(201,168,76,0.08);
-border-color: var(–gold);
-transform: translateY(-2px);
-}
-
-.scroll-hint {
-position: absolute;
-bottom: 40px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 8px;
-animation: scrollFade 2s ease-in-out infinite;
-}
-.scroll-hint span { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(–gold); }
-.scroll-line { width: 1px; height: 40px; background: linear-gradient(180deg, var(–gold), transparent); }
-
-@keyframes scrollFade {
-0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
-50% { opacity: 0.7; transform: translateX(-50%) translateY(6px); }
-}
-
-section { position: relative; z-index: 1; }
-
-.section-tag {
-font-family: ‘Cinzel’, serif;
-font-size: 0.65rem;
-font-weight: 600;
-letter-spacing: 0.4em;
-text-transform: uppercase;
-color: var(–gold);
-margin-bottom: 1rem;
-display: block;
-}
-
-.section-title {
-font-family: ‘Cinzel’, serif;
-font-size: clamp(2rem, 5vw, 3.5rem);
-font-weight: 700;
-color: var(–ivory);
-line-height: 1.1;
-margin-bottom: 1.5rem;
-}
-
-.section-body {
-font-size: 1rem;
-line-height: 1.8;
-color: var(–ivory-dim);
-font-weight: 300;
-max-width: 560px;
-}
-
-#about {
-padding: 120px 60px;
-background: var(–obsidian-2);
-}
-
-.about-inner {
-max-width: 800px;
-margin: 0 auto;
-text-align: center;
-}
-
-.stats-row {
-display: flex;
-gap: 40px;
-margin-top: 3rem;
-}
-
-.stat-num {
-font-family: ‘Cinzel’, serif;
-font-size: 2rem;
-font-weight: 700;
-color: var(–gold);
-}
-.stat-label {
-font-size: 0.72rem;
-font-weight: 500;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(–ivory-dim);
-margin-top: 2px;
-}
-
-#socials {
-padding: 100px 60px;
-background: var(–obsidian);
-text-align: center;
-}
-
-.socials-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 20px;
-max-width: 1000px;
-margin: 0 auto;
-}
-
-.social-card {
-background: var(–obsidian-3);
-border: 1px solid rgba(201,168,76,0.12);
-padding: 36px 24px;
-position: relative;
-transition: all 0.35s ease;
-cursor: pointer;
-overflow: hidden;
-text-decoration: none;
-display: block;
-color: inherit;
-}
-
-.social-card::before {
-content: ‘’;
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, transparent, var(–gold), transparent);
-transform: scaleX(0);
-transition: transform 0.35s ease;
-}
-
-.social-card:hover {
-border-color: rgba(201,168,76,0.35);
-background: var(–obsidian-4);
-transform: translateY(-6px);
-}
-.social-card:hover::before { transform: scaleX(1); }
-
-.social-icon {
-font-size: 1.8rem;
-margin-bottom: 14px;
-color: var(–gold);
-transition: transform 0.3s;
-}
-.social-card:hover .social-icon { transform: scale(1.12); }
-
-.social-platform {
-font-family: ‘Cinzel’, serif;
-font-size: 0.75rem;
-font-weight: 700;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–gold);
-margin-bottom: 6px;
-}
-
-.social-handle {
-font-size: 0.85rem;
-color: var(–ivory-dim);
-font-weight: 300;
-letter-spacing: 0.05em;
-}
-
-.social-count {
-margin-top: 14px;
-font-family: ‘Cinzel’, serif;
-font-size: 1.4rem;
-font-weight: 700;
-color: var(–ivory);
-}
-
-.social-count-label {
-font-size: 0.65rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: rgba(201,168,76,0.6);
-margin-top: 2px;
-}
-
-#meetgreet {
-padding: 120px 60px;
-background:
-radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%),
-var(–obsidian-2);
-text-align: center;
-}
-
-.meetgreet-intro {
-max-width: 680px;
-margin: 0 auto 5rem;
-}
-
-.meetgreet-banner {
-background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));
-border: 1px solid rgba(201,168,76,0.2);
-padding: 40px 60px;
-max-width: 900px;
-margin: 0 auto 5rem;
-display: flex;
-align-items: center;
-gap: 60px;
-position: relative;
-overflow: hidden;
-}
-
-.meetgreet-banner::after {
-content: ‘\f521’;
-font-family: ‘Font Awesome 6 Free’;
-font-weight: 900;
-position: absolute;
-right: 40px;
-top: 50%;
-transform: translateY(-50%);
-font-size: 5rem;
-color: rgba(201,168,76,0.05);
-pointer-events: none;
-}
-
-.banner-date-block {
-flex-shrink: 0;
-text-align: center;
-padding: 20px 30px;
-border: 1px solid rgba(201,168,76,0.3);
-background: rgba(201,168,76,0.05);
-}
-.banner-month {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.3em;
-color: var(–gold);
-text-transform: uppercase;
-}
-.banner-day {
-font-family: ‘Cinzel’, serif;
-font-size: 3.5rem;
-font-weight: 900;
-color: var(–ivory);
-line-height: 1;
-margin: 4px 0;
-}
-.banner-year {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-color: var(–ivory-dim);
-letter-spacing: 0.2em;
-}
-
-.banner-info { text-align: left; }
-.banner-event-name {
-font-family: ‘Cinzel’, serif;
-font-size: 1.5rem;
-font-weight: 700;
-color: var(–ivory);
-margin-bottom: 8px;
-}
-.banner-location {
-display: flex;
-align-items: center;
-gap: 8px;
-font-size: 0.85rem;
-color: var(–gold);
-letter-spacing: 0.1em;
-margin-bottom: 12px;
-}
-.banner-location i { font-size: 0.8rem; }
-.banner-desc {
-font-size: 0.88rem;
-line-height: 1.7;
-color: var(–ivory-dim);
-font-weight: 300;
-max-width: 380px;
-}
-
-.fan-cards-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 24px;
-max-width: 1100px;
-margin: 0 auto;
-}
-
-.fan-card {
-background: var(–obsidian-3);
-border: 1px solid rgba(201,168,76,0.15);
-padding: 48px 36px;
-position: relative;
-transition: all 0.4s ease;
-overflow: hidden;
-}
-
-.fan-card::before {
-content: ‘’;
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 3px;
-background: linear-gradient(90deg, transparent, var(–gold), transparent);
-opacity: 0;
-transition: opacity 0.4s;
-}
-
-.fan-card.featured {
-border-color: rgba(201,168,76,0.5);
-background: linear-gradient(160deg, rgba(201,168,76,0.08), var(–obsidian-3));
-transform: scale(1.04);
-}
-.fan-card.featured::before { opacity: 1; }
-
-.fan-card:hover {
-border-color: rgba(201,168,76,0.4);
-transform: translateY(-8px);
-}
-.fan-card.featured:hover { transform: scale(1.04) translateY(-8px); }
-
-.card-badge-featured {
-position: absolute;
-top: 20px; right: -32px;
-background: linear-gradient(135deg, var(–gold-light), var(–gold));
-color: var(–obsidian);
-font-family: ‘Cinzel’, serif;
-font-size: 0.6rem;
-font-weight: 700;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-padding: 6px 48px;
-transform: rotate(45deg);
-}
-
-.card-tier-icon {
-font-size: 1.7rem;
-margin-bottom: 16px;
-display: block;
-color: var(–gold);
-filter: drop-shadow(0 0 8px rgba(201,168,76,0.35));
-}
-
-.card-tier {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: var(–gold);
-margin-bottom: 8px;
-}
-
-.card-name {
-font-family: ‘Cinzel’, serif;
-font-size: 1.5rem;
-font-weight: 700;
-color: var(–ivory);
-margin-bottom: 6px;
-}
-
-.card-tagline {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 0.95rem;
-font-style: italic;
-color: var(–ivory-dim);
-font-weight: 300;
-margin-bottom: 28px;
-}
-
-.card-price-row {
-display: flex;
-align-items: baseline;
-gap: 6px;
-margin-bottom: 28px;
-padding-bottom: 24px;
-border-bottom: 1px solid rgba(201,168,76,0.12);
-}
-
-.card-currency {
-font-family: ‘Cinzel’, serif;
-font-size: 1.2rem;
-color: var(–gold);
-}
-
-.card-price {
-font-family: ‘Cinzel’, serif;
-font-size: 3rem;
-font-weight: 900;
-color: var(–ivory);
-line-height: 1;
-}
-
-.card-period {
-font-size: 0.8rem;
-color: var(–ivory-dim);
-font-weight: 300;
-letter-spacing: 0.05em;
-}
-
-.card-perks {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 12px;
-margin-bottom: 36px;
-}
-
-.card-perks li {
-display: flex;
-align-items: flex-start;
-gap: 12px;
-font-size: 0.88rem;
-color: var(–ivory-dim);
-font-weight: 300;
-line-height: 1.5;
-}
-
-.perk-check {
-color: var(–gold);
-flex-shrink: 0;
-font-size: 0.72rem;
-margin-top: 4px;
-}
-
-.card-btn {
-width: 100%;
-padding: 16px;
-background: transparent;
-border: 1px solid rgba(201,168,76,0.4);
-color: var(–gold);
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-cursor: pointer;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-}
-
-.card-btn::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: linear-gradient(135deg, var(–gold-light), var(–gold));
-transform: translateY(100%);
-transition: transform 0.3s ease;
-z-index: 0;
-}
-
-.card-btn span { position: relative; z-index: 1; }
-.card-btn:hover::before { transform: translateY(0); }
-.card-btn:hover { color: var(–obsidian); border-color: var(–gold); }
-
-.card-btn.filled {
-background: linear-gradient(135deg, var(–gold-light), var(–gold));
-color: var(–obsidian);
-border-color: transparent;
-}
-.card-btn.filled::before { background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent); }
-.card-btn.filled:hover { color: var(–obsidian); }
-
-#quote-section {
-padding: 120px 60px;
-background: var(–obsidian);
-text-align: center;
-position: relative;
-overflow: hidden;
-}
-
-#quote-section::before {
-content: ‘\f10d’;
-font-family: ‘Font Awesome 6 Free’;
-font-weight: 900;
-position: absolute;
-top: 40px;
-left: 50%;
-transform: translateX(-50%);
-font-size: 10rem;
-color: rgba(201,168,76,0.04);
-line-height: 1;
-pointer-events: none;
-}
-
-.quote-text {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(1.8rem, 4vw, 3rem);
-font-weight: 300;
-font-style: italic;
-color: var(–ivory);
-max-width: 800px;
-margin: 0 auto 2rem;
-line-height: 1.4;
-position: relative;
-}
-
-.quote-attr {
-font-family: ‘Cinzel’, serif;
-font-size: 0.7rem;
-font-weight: 600;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: var(–gold);
-}
-
-footer {
-padding: 60px;
-background: var(–obsidian-2);
-border-top: 1px solid rgba(201,168,76,0.1);
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-gap: 24px;
-}
-
-.footer-logo {
-font-family: ‘Cinzel’, serif;
-font-size: 1rem;
-font-weight: 700;
-color: var(–gold);
-letter-spacing: 0.2em;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.footer-links {
-display: flex;
-gap: 28px;
-list-style: none;
-}
-
-.footer-links a {
-font-size: 0.72rem;
-font-weight: 500;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(–ivory-dim);
-text-decoration: none;
-transition: color 0.3s;
-}
-.footer-links a:hover { color: var(–gold); }
-
-.footer-copy {
-font-size: 0.72rem;
-color: rgba(201,168,76,0.4);
-letter-spacing: 0.1em;
-font-family: ‘Cormorant Garamond’, serif;
-font-style: italic;
-}
-
-.reveal {
-opacity: 0;
-transform: translateY(24px);
-transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-@media (max-width: 900px) {
-nav { padding: 18px 24px; }
-.nav-links { display: none; }
-#about, #socials, #meetgreet, #quote-section { padding: 80px 24px; }
-.socials-grid { grid-template-columns: repeat(2, 1fr); }
-.fan-cards-grid { grid-template-columns: 1fr; }
-.fan-card.featured { transform: none; }
-.fan-card.featured:hover { transform: translateY(-8px); }
-.meetgreet-banner { flex-direction: column; gap: 24px; padding: 30px; text-align: center; }
-.banner-info { text-align: center; }
-.banner-location { justify-content: center; }
-footer { padding: 40px 24px; flex-direction: column; text-align: center; }
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Balaș — Official Fan Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@300;400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            raleway: ['Raleway', 'sans-serif'],
+          },
+          colors: {
+            gold: '#C9A84C',
+            'gold-light': '#E8C97A',
+            obsidian: '#0B0B0F',
+            'obsidian-2': '#111118',
+            'obsidian-3': '#1A1A24',
+            ivory: '#F8F3E8',
+            'ivory-dim': '#D9D0BE',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Raleway', sans-serif; }
+    .hero-title, .cinzel { font-family: 'Cinzel', serif; }
+    .cormorant { font-family: 'Cormorant Garamond', serif; }
+
+    .hero-bg {
+      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 80% 60%, rgba(45,27,78,0.4) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 60% at 20% 40%, rgba(139,26,42,0.12) 0%, transparent 60%),
+                  #0B0B0F;
+    }
+
+    .scroll-hint {
+      animation: scrollFade 2s ease-in-out infinite;
+    }
+    @keyframes scrollFade {
+      0%, 100% { opacity: 0.3; transform: translateY(0); }
+      50% { opacity: 0.7; transform: translateY(6px); }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-obsidian text-ivory overflow-x-hidden">
 
-<nav>
-  <div class="nav-logo">Daniel Balaș</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#socials">Socials</a></li>
-    <li><a href="#meetgreet">Meet &amp; Greet</a></li>
-    <li><a href="#meetgreet">Fan Passes</a></li>
-  </ul>
-</nav>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/95 to-transparent backdrop-blur-md border-b border-gold/10 py-5 px-6 md:px-16 flex justify-between items-center">
+    <div class="flex items-center gap-2 text-gold text-xl font-bold tracking-widest cinzel">Daniel Balaș</div>
+    <ul class="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase">
+      <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
+      <li><a href="#socials" class="hover:text-gold transition-colors">Socials</a></li>
+      <li><a href="#meetgreet" class="hover:text-gold transition-colors">Meet & Greet</a></li>
+      <li><a href="#meetgreet" class="hover:text-gold transition-colors">Fan Passes</a></li>
+    </ul>
+  </nav>
 
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <div class="hero-crown"><i class="fa-solid fa-crown"></i></div>
-    <p class="hero-eyebrow">Official Fan Page</p>
-    <h1 class="hero-title">
-      Daniel<span>Balaș</span>
-    </h1>
-    <p class="hero-subtitle">Creator &middot; Visionary &middot; Un Suflet Călător</p>
-    <div class="hero-cta-group">
-      <a href="#meetgreet" class="btn-royal primary">Book a Meet &amp; Greet</a>
-      <a href="#about" class="btn-royal ghost">Discover More</a>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="about-inner">
-    <span class="section-tag reveal">About the Creator</span>
-    <h2 class="section-title reveal reveal-delay-1">A Soul<br>in Motion</h2>
-    <div class="divider reveal reveal-delay-2">
-      <div class="divider-gem"></div>
-    </div>
-    <p class="section-body reveal reveal-delay-2" style="margin:0 auto; text-align:center;">
-      Daniel Balaș is a Romanian content creator and personality whose motto — <em>"Iubesc darul cel mai de preț, VIAȚA!"</em> — captures everything he stands for. With a wandering soul and a gift for authentic storytelling, Daniel has built a vibrant community across platforms, sharing his life, thoughts, and adventures with fearless honesty.
-    </p>
-    <p class="section-body reveal reveal-delay-3" style="margin:1.2rem auto 0; text-align:center;">
-      From Birmingham to Bucharest, his journey resonates with thousands who follow along, connect, and find pieces of themselves in his work. Every post, every reel, every moment — crafted with soul.
-    </p>
-    <div class="stats-row reveal reveal-delay-4" style="justify-content:center;">
-      <div class="stat-item">
-        <div class="stat-num">14K+</div>
-        <div class="stat-label">Instagram Fans</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">209</div>
-        <div class="stat-label">Posts</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">&#8734;</div>
-        <div class="stat-label">Soul</div>
+  <!-- Hero -->
+  <section id="hero" class="min-h-screen flex items-center justify-center relative">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,#C9A84C_0px,#C9A84C_1px,transparent_1px,transparent_40px),repeating-linear-gradient(-45deg,#C9A84C_0px,#C9A84C_1px,transparent_1px,transparent_40px)]"></div>
+    
+    <div class="text-center z-10 px-6 max-w-4xl mx-auto">
+      <div class="text-4xl text-gold mb-4">👑</div>
+      <p class="text-gold tracking-[0.4em] text-sm font-semibold mb-2">OFFICIAL FAN PAGE</p>
+      <h1 class="hero-title text-6xl md:text-8xl font-black leading-none tracking-tight mb-4">
+        DANIEL <span class="bg-gradient-to-r from-gold-light via-gold to-amber-700 bg-clip-text text-transparent">BALAȘ</span>
+      </h1>
+      <p class="cormorant text-2xl md:text-3xl italic text-ivory-dim">Creator • Visionary • Un Suflet Călător</p>
+      
+      <div class="flex flex-wrap gap-4 justify-center mt-10">
+        <a href="#meetgreet" onclick="openChat(); return false;" class="bg-gradient-to-r from-gold-light to-gold text-obsidian px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:scale-105 transition-all shadow-xl shadow-gold/30">BOOK MEET & GREET</a>
+        <a href="#about" class="border border-gold/50 hover:border-gold px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:bg-gold/10 transition-all">DISCOVER MORE</a>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="socials">
-  <span class="section-tag reveal">Connect</span>
-  <h2 class="section-title reveal reveal-delay-1">Royal Court<br>of Socials</h2>
-  <div class="divider reveal reveal-delay-2"><div class="divider-gem"></div></div>
-  <div class="socials-grid">
-    <a href="https://www.instagram.com/danielbalas15/" target="_blank" class="social-card reveal">
-      <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
-      <div class="social-platform">Instagram</div>
-      <div class="social-handle">@danielbalas15</div>
-      <div class="social-count">14K</div>
-      <div class="social-count-label">Followers</div>
-    </a>
-    <a href="https://linktr.ee/danielbalas" target="_blank" class="social-card reveal reveal-delay-1">
-      <div class="social-icon"><i class="fa-brands fa-tiktok"></i></div>
-      <div class="social-platform">TikTok</div>
-      <div class="social-handle">@danielbalas</div>
-      <div class="social-count"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:1rem;"></i></div>
-      <div class="social-count-label">Watch Now</div>
-    </a>
-    <a href="https://www.facebook.com/danielbalas15/" target="_blank" class="social-card reveal reveal-delay-2">
-      <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
-      <div class="social-platform">Facebook</div>
-      <div class="social-handle">Daniel Balaș</div>
-      <div class="social-count"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:1rem;"></i></div>
-      <div class="social-count-label">Follow</div>
-    </a>
-    <a href="https://www.youtube.com/@danielbalas" target="_blank" class="social-card reveal reveal-delay-3">
-      <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
-      <div class="social-platform">YouTube</div>
-      <div class="social-handle">@danielbalas</div>
-      <div class="social-count"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size:1rem;"></i></div>
-      <div class="social-count-label">Subscribe</div>
-    </a>
-  </div>
-</section>
-
-<section id="meetgreet">
-  <div class="meetgreet-intro">
-    <span class="section-tag reveal">Royal Audience</span>
-    <h2 class="section-title reveal reveal-delay-1">Meet &amp; Greet<br>with Daniel</h2>
-    <div class="divider reveal reveal-delay-2"><div class="divider-gem"></div></div>
-    <p class="section-body reveal reveal-delay-2" style="margin:0 auto; text-align:center;">
-      An intimate gathering where fans become part of Daniel's world. Exclusive moments, personal conversations, and memories that last a lifetime — reserved for those who truly belong to the court.
-    </p>
-  </div>
-
-  <div class="meetgreet-banner reveal">
-    <div class="banner-date-block">
-      <div class="banner-month">June</div>
-      <div class="banner-day">21</div>
-      <div class="banner-year">2025</div>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center scroll-hint">
+      <span class="text-gold text-xs tracking-widest">SCROLL</span>
+      <div class="w-px h-12 bg-gradient-to-b from-gold to-transparent mt-2"></div>
     </div>
-    <div class="banner-info">
-      <div class="banner-event-name">Royal Fan Evening</div>
-      <div class="banner-location">
-        <i class="fa-solid fa-location-dot"></i>
-        Bucharest, Romania &mdash; Grand Hall
-      </div>
-      <div class="banner-desc">
-        An exclusive evening with Daniel Balaș — live Q&amp;A, private photo sessions, autograph signings, and an intimate performance. Seats are limited to preserve the regal experience.
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-obsidian-2">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <p class="text-gold tracking-widest text-sm font-semibold mb-3">ABOUT THE CREATOR</p>
+      <h2 class="cinzel text-5xl md:text-6xl font-bold leading-tight mb-8">A Soul<br>in Motion</h2>
+      
+      <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10"></div>
+      
+      <p class="text-ivory-dim text-lg leading-relaxed max-w-2xl mx-auto">
+        Daniel Balaș is a Romanian content creator whose motto — <span class="italic">"Iubesc darul cel mai de preț, VIAȚA!"</span> — captures everything he stands for.
+      </p>
+      <p class="text-ivory-dim text-lg leading-relaxed mt-6 max-w-2xl mx-auto">
+        With a wandering soul and authentic storytelling, he has built a vibrant community across platforms.
+      </p>
+
+      <div class="grid grid-cols-3 gap-8 mt-16">
+        <div>
+          <div class="text-4xl font-bold text-gold cinzel">14K+</div>
+          <div class="text-xs tracking-widest text-ivory-dim mt-1">Instagram Fans</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-gold cinzel">209</div>
+          <div class="text-xs tracking-widest text-ivory-dim mt-1">Posts</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-gold cinzel">∞</div>
+          <div class="text-xs tracking-widest text-ivory-dim mt-1">Soul</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="fan-cards-grid">
-    <div class="fan-card reveal">
-      <span class="card-tier-icon"><i class="fa-solid fa-medal"></i></span>
-      <div class="card-tier">Silver Pass</div>
-      <div class="card-name">The Courtier</div>
-      <div class="card-tagline">Step through the palace gates</div>
-      <div class="card-price-row">
-        <span class="card-currency">$</span>
-        <span class="card-price">300</span>
-        <span class="card-period">/ per event</span>
+  <!-- Socials -->
+  <section id="socials" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-gold tracking-widest text-sm font-semibold mb-3">CONNECT</p>
+      <h2 class="cinzel text-5xl md:text-6xl font-bold mb-4">Royal Court of Socials</h2>
+      <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/danielbalas15/" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+          <i class="fa-brands fa-instagram text-4xl text-gold mb-6"></i>
+          <div class="font-cinzel text-gold tracking-widest text-sm">INSTAGRAM</div>
+          <div class="text-ivory-dim mt-1">@danielbalas15</div>
+          <div class="text-4xl font-bold text-ivory mt-8 cinzel">14K+</div>
+          <div class="text-xs text-gold/60 tracking-widest">Followers</div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@danielbalasofficial" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+          <i class="fa-brands fa-tiktok text-4xl text-gold mb-6"></i>
+          <div class="font-cinzel text-gold tracking-widest text-sm">TIKTOK</div>
+          <div class="text-ivory-dim mt-1">@danielbalasofficial</div>
+          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
+          <div class="text-xs text-gold/60 tracking-widest mt-2">Watch Now</div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/danielbalas15/" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+          <i class="fa-brands fa-facebook-f text-4xl text-gold mb-6"></i>
+          <div class="font-cinzel text-gold tracking-widest text-sm">FACEBOOK</div>
+          <div class="text-ivory-dim mt-1">Daniel Balaș</div>
+          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
+          <div class="text-xs text-gold/60 tracking-widest mt-2">Follow</div>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@danielbalas" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+          <i class="fa-brands fa-youtube text-4xl text-gold mb-6"></i>
+          <div class="font-cinzel text-gold tracking-widest text-sm">YOUTUBE</div>
+          <div class="text-ivory-dim mt-1">@danielbalas</div>
+          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
+          <div class="text-xs text-gold/60 tracking-widest mt-2">Subscribe</div>
+        </a>
       </div>
-      <ul class="card-perks">
-        <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> General admission entry</li>
-        <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Group photo opportunity</li>
-        <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Signed event poster</li>
-        <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Exclusive digital wallpaper pack</li>
-        <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Access to fan lounge</li>
-      </ul>
-      <button class="card-btn"><span>Claim Pass</span></button>
     </div>
+  </section>
 
-```
-<div class="fan-card featured reveal reveal-delay-1">
-  <div class="card-badge-featured">Most Popular</div>
-  <span class="card-tier-icon"><i class="fa-solid fa-crown"></i></span>
-  <div class="card-tier">Gold Pass</div>
-  <div class="card-name">The Noble</div>
-  <div class="card-tagline">Command a royal audience</div>
-  <div class="card-price-row">
-    <span class="card-currency">$</span>
-    <span class="card-price">550</span>
-    <span class="card-period">/ per event</span>
-  </div>
-  <ul class="card-perks">
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Priority early entry</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Private 1-on-1 photo with Daniel</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Signed merchandise item</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> VIP lounge access with refreshments</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Exclusive Q&amp;A session seat</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Commemorative wristband</li>
-  </ul>
-  <button class="card-btn filled"><span>Claim Pass</span></button>
-</div>
+  <!-- Meet & Greet + Fan Passes -->
+  <section id="meetgreet" class="py-24 bg-obsidian-2">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-gold tracking-widest text-sm font-semibold">ROYAL AUDIENCE</p>
+        <h2 class="cinzel text-5xl md:text-6xl font-bold mt-3">Meet & Greet with Daniel</h2>
+      </div>
 
-<div class="fan-card reveal reveal-delay-2">
-  <span class="card-tier-icon"><i class="fa-solid fa-gem"></i></span>
-  <div class="card-tier">Diamond Pass</div>
-  <div class="card-name">The Royal</div>
-  <div class="card-tagline">Reign beside the king</div>
-  <div class="card-price-row">
-    <span class="card-currency">$</span>
-    <span class="card-price">900</span>
-    <span class="card-period">/ per event</span>
-  </div>
-  <ul class="card-perks">
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> All Gold Pass benefits</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Backstage pre-show access</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> 10-min private conversation</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Personalized video message</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Limited edition royal gift box</li>
-    <li><span class="perk-check"><i class="fa-solid fa-check"></i></span> Name in event program credits</li>
-  </ul>
-  <button class="card-btn"><span>Claim Pass</span></button>
-</div>
-```
+      <!-- Event Banner -->
+      <div class="bg-gradient-to-br from-gold/5 to-transparent border border-gold/20 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row gap-10 items-center mb-16">
+        <div class="bg-obsidian border border-gold/30 p-8 text-center rounded-xl min-w-[160px]">
+          <div class="text-gold text-sm tracking-widest font-semibold">JUNE</div>
+          <div class="text-7xl font-black text-ivory cinzel leading-none my-2">21</div>
+          <div class="text-ivory-dim text-sm">2025</div>
+        </div>
+        <div>
+          <h3 class="cinzel text-3xl font-bold mb-3">Royal Fan Evening</h3>
+          <div class="flex items-center gap-2 text-gold mb-4">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Bucharest, Romania — Grand Hall</span>
+          </div>
+          <p class="text-ivory-dim max-w-md">An exclusive evening with live Q&A, private photo sessions, autograph signings, and an intimate performance.</p>
+        </div>
+      </div>
 
-  </div>
-</section>
+      <!-- Fan Passes -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Silver -->
+        <div class="bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-2xl transition-all group">
+          <i class="fa-solid fa-medal text-4xl text-gold mb-6"></i>
+          <div class="text-gold text-sm tracking-widest font-semibold">SILVER PASS</div>
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Courtier</div>
+          <div class="cormorant italic text-ivory-dim mb-8">Step through the palace gates</div>
+          
+          <div class="my-8 border-b border-gold/10 pb-8">
+            <span class="text-gold text-2xl">$</span>
+            <span class="text-6xl font-black cinzel">300</span>
+            <span class="text-ivory-dim">/event</span>
+          </div>
 
-<section id="quote-section">
-  <blockquote class="quote-text reveal">
-    "Iubesc darul cel mai de preț — <em>Viața!</em>"
-  </blockquote>
-  <p class="quote-attr reveal reveal-delay-1">— Daniel Balaș</p>
-</section>
+          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> General admission</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Group photo</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Signed poster</li>
+          </ul>
+          <button onclick="openChat()" class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">CLAIM PASS</button>
+        </div>
 
-<footer>
-  <div class="footer-logo">
-    <i class="fa-solid fa-crown"></i>
-    Daniel Balaș
-  </div>
-  <ul class="footer-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#socials">Socials</a></li>
-    <li><a href="#meetgreet">Meet &amp; Greet</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <div class="footer-copy">&copy; 2025 Daniel Balaș &middot; All rights reserved &middot; Un Suflet Călător</div>
-</footer>
+        <!-- Gold (Featured) -->
+        <div class="bg-gradient-to-b from-gold/10 to-obsidian-3 border-2 border-gold p-10 rounded-2xl relative scale-105 shadow-2xl shadow-gold/20">
+          <div class="absolute -top-4 right-6 bg-gradient-to-r from-gold to-amber-600 text-obsidian text-xs font-bold px-8 py-1 rotate-12">MOST POPULAR</div>
+          
+          <i class="fa-solid fa-crown text-4xl text-gold mb-6"></i>
+          <div class="text-gold text-sm tracking-widest font-semibold">GOLD PASS</div>
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Noble</div>
+          <div class="cormorant italic text-ivory-dim mb-8">Command a royal audience</div>
+          
+          <div class="my-8 border-b border-gold/10 pb-8">
+            <span class="text-gold text-2xl">$</span>
+            <span class="text-6xl font-black cinzel">550</span>
+            <span class="text-ivory-dim">/event</span>
+          </div>
 
-<script>
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'YOUR_SMARTSUPP_KEY';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsupp.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
+          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Priority entry</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Private 1-on-1 photo</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> VIP lounge access</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Exclusive Q&A</li>
+          </ul>
+          <button onclick="openChat()" class="w-full py-4 bg-gradient-to-r from-gold to-amber-600 text-obsidian font-cinzel tracking-widest text-sm hover:scale-105 transition-all">CLAIM GOLD PASS</button>
+        </div>
 
-var revealEls = document.querySelectorAll('.reveal');
-var revealObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+        <!-- Diamond -->
+        <div class="bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-2xl transition-all group">
+          <i class="fa-solid fa-gem text-4xl text-gold mb-6"></i>
+          <div class="text-gold text-sm tracking-widest font-semibold">DIAMOND PASS</div>
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Royal</div>
+          <div class="cormorant italic text-ivory-dim mb-8">Reign beside the king</div>
+          
+          <div class="my-8 border-b border-gold/10 pb-8">
+            <span class="text-gold text-2xl">$</span>
+            <span class="text-6xl font-black cinzel">900</span>
+            <span class="text-ivory-dim">/event</span>
+          </div>
+
+          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> All Gold benefits</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> 10-min private talk</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1i> Personalized video</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Limited edition gift</li>
+          </ul>
+          <button onclick="openChat()" class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">CLAIM PASS</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-28 text-center px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="cormorant text-4xl md:text-5xl italic leading-relaxed">"Iubesc darul cel mai de preț — <span class="text-gold">Viața!</span>"</p>
+      <p class="text-gold tracking-widest mt-8 text-sm font-semibold">— Daniel Balaș</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-obsidian-2 border-t border-gold/10 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+      <div class="flex items-center gap-3 text-gold cinzel text-lg">
+        <i class="fa-solid fa-crown"></i> Daniel Balaș
+      </div>
+      <div class="flex gap-8 text-ivory-dim">
+        <a href="#about" class="hover:text-gold">About</a>
+        <a href="#socials" class="hover:text-gold">Socials</a>
+        <a href="#meetgreet" class="hover:text-gold">Meet & Greet</a>
+      </div>
+      <div class="text-ivory-dim/70 text-xs">© 2025 Daniel Balaș • Un Suflet Călător</div>
+    </div>
+  </footer>
+
+  <!-- Smartsupp Live Chat -->
+  <script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '6748f4bf4ee1856e37c46ef3e1bac04a71202e10';
+    window.smartsupp||(function(d){
+      var s,c,o=smartsupp=function(){o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];
+      c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';
+      s.parentNode.insertBefore(c,s);
+    })(document);
+  </script>
+
+  <script>
+    function openChat() {
+      if (typeof smartsupp === 'function') {
+        smartsupp('chat:open');
+      } else {
+        alert("Live chat is loading... Please wait a moment.");
+      }
     }
-  });
-}, { threshold: 0.12 });
-revealEls.forEach(function(el) { revealObserver.observe(el); });
 
-document.querySelectorAll('.card-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    if (typeof smartsupp === 'function') {
-      smartsupp('chat:open');
-    }
-  });
-});
-
-var allSections = document.querySelectorAll('section[id]');
-var allNavLinks = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', function() {
-  var current = '';
-  allSections.forEach(function(sec) {
-    if (window.scrollY >= sec.offsetTop - 200) current = sec.id;
-  });
-  allNavLinks.forEach(function(link) {
-    link.style.color = link.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
-  });
-});
-</script>
-
+    // Make hero "BOOK MEET & GREET" also open chat
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroBookBtn = document.querySelector('a[href="#meetgreet"]');
+      if (heroBookBtn) {
+        heroBookBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openChat();
+        });
+      }
+    });
+  </script>
 </body>
 </html>
