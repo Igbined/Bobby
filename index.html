@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Daniel Balaș — Official Fan Page</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@300;400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@300;400;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+  rel="stylesheet">
+
   <script>
     tailwind.config = {
       theme: {
@@ -32,308 +38,355 @@
   </script>
 
   <style>
-    body { font-family: 'Raleway', sans-serif; }
-    .hero-title, .cinzel { font-family: 'Cinzel', serif; }
-    .cormorant { font-family: 'Cormorant Garamond', serif; }
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .hero-title,
+    .cinzel {
+      font-family: 'Cinzel', serif;
+    }
+
+    .cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
 
     .hero-bg {
-      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
-                  radial-gradient(ellipse 40% 40% at 80% 60%, rgba(45,27,78,0.4) 0%, transparent 60%),
-                  radial-gradient(ellipse 50% 60% at 20% 40%, rgba(139,26,42,0.12) 0%, transparent 60%),
-                  #0B0B0F;
+      background:
+      radial-gradient(ellipse 60% 80% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 60%, rgba(45,27,78,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 20% 40%, rgba(139,26,42,0.12) 0%, transparent 60%),
+      #0B0B0F;
     }
 
     .scroll-hint {
       animation: scrollFade 2s ease-in-out infinite;
     }
+
     @keyframes scrollFade {
-      0%, 100% { opacity: 0.3; transform: translateY(0); }
-      50% { opacity: 0.7; transform: translateY(6px); }
+      0%,100% {
+        opacity: 0.3;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: translateY(6px);
+      }
     }
   </style>
 </head>
+
 <body class="bg-obsidian text-ivory overflow-x-hidden">
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/95 to-transparent backdrop-blur-md border-b border-gold/10 py-5 px-6 md:px-16 flex justify-between items-center">
-    <div class="flex items-center gap-2 text-gold text-xl font-bold tracking-widest cinzel">Daniel Balaș</div>
+
+    <div class="flex items-center gap-2 text-gold text-xl font-bold tracking-widest cinzel">
+      Daniel Balaș
+    </div>
+
     <ul class="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase">
       <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
       <li><a href="#socials" class="hover:text-gold transition-colors">Socials</a></li>
       <li><a href="#meetgreet" class="hover:text-gold transition-colors">Meet & Greet</a></li>
-      <li><a href="#meetgreet" class="hover:text-gold transition-colors">Fan Passes</a></li>
     </ul>
+
   </nav>
 
-  <!-- Hero -->
-  <section id="hero" class="min-h-screen flex items-center justify-center relative">
+
+  <!-- HERO -->
+  <section id="hero"
+  class="min-h-screen flex items-center justify-center relative">
+
     <div class="hero-bg absolute inset-0"></div>
-    <div class="absolute inset-0 opacity-5 bg-[repeating-linear-gradient(45deg,#C9A84C_0px,#C9A84C_1px,transparent_1px,transparent_40px),repeating-linear-gradient(-45deg,#C9A84C_0px,#C9A84C_1px,transparent_1px,transparent_40px)]"></div>
-    
+
     <div class="text-center z-10 px-6 max-w-4xl mx-auto">
+
       <div class="text-4xl text-gold mb-4">👑</div>
-      <p class="text-gold tracking-[0.4em] text-sm font-semibold mb-2">OFFICIAL FAN PAGE</p>
+
+      <p class="text-gold tracking-[0.4em] text-sm font-semibold mb-2">
+        OFFICIAL FAN PAGE
+      </p>
+
       <h1 class="hero-title text-6xl md:text-8xl font-black leading-none tracking-tight mb-4">
-        DANIEL <span class="bg-gradient-to-r from-gold-light via-gold to-amber-700 bg-clip-text text-transparent">BALAȘ</span>
+        DANIEL
+        <span class="bg-gradient-to-r from-gold-light via-gold to-amber-700 bg-clip-text text-transparent">
+          BALAȘ
+        </span>
       </h1>
-      <p class="cormorant text-2xl md:text-3xl italic text-ivory-dim">Creator • Visionary • Un Suflet Călător</p>
-      
+
+      <p class="cormorant text-2xl md:text-3xl italic text-ivory-dim">
+        Creator • Visionary • Un Suflet Călător
+      </p>
+
       <div class="flex flex-wrap gap-4 justify-center mt-10">
-        <a href="#meetgreet" onclick="openChat(); return false;" class="bg-gradient-to-r from-gold-light to-gold text-obsidian px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:scale-105 transition-all shadow-xl shadow-gold/30">BOOK MEET & GREET</a>
-        <a href="#about" class="border border-gold/50 hover:border-gold px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:bg-gold/10 transition-all">DISCOVER MORE</a>
+
+        <a href="#"
+        onclick="openChat(); return false;"
+        class="bg-gradient-to-r from-gold-light to-gold text-obsidian px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:scale-105 transition-all shadow-xl shadow-gold/30">
+          BOOK MEET & GREET
+        </a>
+
+        <a href="#about"
+        class="border border-gold/50 hover:border-gold px-10 py-4 rounded font-cinzel tracking-widest text-sm font-bold hover:bg-gold/10 transition-all">
+          DISCOVER MORE
+        </a>
+
       </div>
+
     </div>
 
-    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center scroll-hint">
-      <span class="text-gold text-xs tracking-widest">SCROLL</span>
-      <div class="w-px h-12 bg-gradient-to-b from-gold to-transparent mt-2"></div>
-    </div>
   </section>
 
-  <!-- About -->
+
+
+  <!-- ABOUT -->
   <section id="about" class="py-24 bg-obsidian-2">
+
     <div class="max-w-3xl mx-auto text-center px-6">
-      <p class="text-gold tracking-widest text-sm font-semibold mb-3">ABOUT THE CREATOR</p>
-      <h2 class="cinzel text-5xl md:text-6xl font-bold leading-tight mb-8">A Soul<br>in Motion</h2>
-      
-      <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10"></div>
-      
-      <p class="text-ivory-dim text-lg leading-relaxed max-w-2xl mx-auto">
-        Daniel Balaș is a Romanian content creator whose motto — <span class="italic">"Iubesc darul cel mai de preț, VIAȚA!"</span> — captures everything he stands for.
-      </p>
-      <p class="text-ivory-dim text-lg leading-relaxed mt-6 max-w-2xl mx-auto">
-        With a wandering soul and authentic storytelling, he has built a vibrant community across platforms.
+
+      <p class="text-gold tracking-widest text-sm font-semibold mb-3">
+        ABOUT THE CREATOR
       </p>
 
-      <div class="grid grid-cols-3 gap-8 mt-16">
-        <div>
-          <div class="text-4xl font-bold text-gold cinzel">14K+</div>
-          <div class="text-xs tracking-widest text-ivory-dim mt-1">Instagram Fans</div>
-        </div>
-        <div>
-          <div class="text-4xl font-bold text-gold cinzel">209</div>
-          <div class="text-xs tracking-widest text-ivory-dim mt-1">Posts</div>
-        </div>
-        <div>
-          <div class="text-4xl font-bold text-gold cinzel">∞</div>
-          <div class="text-xs tracking-widest text-ivory-dim mt-1">Soul</div>
-        </div>
-      </div>
+      <h2 class="cinzel text-5xl md:text-6xl font-bold leading-tight mb-8">
+        A Soul<br>in Motion
+      </h2>
+
+      <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10"></div>
+
+      <p class="text-ivory-dim text-lg leading-relaxed">
+        Daniel Balaș is a Romanian content creator whose motto —
+        <span class="italic">"Iubesc darul cel mai de preț, VIAȚA!"</span>
+        — captures everything he stands for.
+      </p>
+
     </div>
+
   </section>
 
-  <!-- Socials -->
+
+
+  <!-- SOCIALS -->
   <section id="socials" class="py-24 px-6">
+
     <div class="max-w-5xl mx-auto text-center">
-      <p class="text-gold tracking-widest text-sm font-semibold mb-3">CONNECT</p>
-      <h2 class="cinzel text-5xl md:text-6xl font-bold mb-4">Royal Court of Socials</h2>
-      <div class="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12"></div>
+
+      <p class="text-gold tracking-widest text-sm font-semibold mb-3">
+        CONNECT
+      </p>
+
+      <h2 class="cinzel text-5xl md:text-6xl font-bold mb-12">
+        Royal Court of Socials
+      </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
         <!-- Instagram -->
-        <a href="https://www.instagram.com/danielbalas15/" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+        <a href="https://www.instagram.com/danielbalas15/"
+        target="_blank"
+        class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+
           <i class="fa-brands fa-instagram text-4xl text-gold mb-6"></i>
-          <div class="font-cinzel text-gold tracking-widest text-sm">INSTAGRAM</div>
-          <div class="text-ivory-dim mt-1">@danielbalas15</div>
-          <div class="text-4xl font-bold text-ivory mt-8 cinzel">14K+</div>
-          <div class="text-xs text-gold/60 tracking-widest">Followers</div>
+
+          <div class="font-cinzel text-gold tracking-widest text-sm">
+            INSTAGRAM
+          </div>
+
+          <div class="text-ivory-dim mt-1">
+            @danielbalas15
+          </div>
+
         </a>
+
+
 
         <!-- TikTok -->
-        <a href="https://www.tiktok.com/@danielbalasofficial" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+        <a href="https://www.tiktok.com/@danielbalasofficial"
+        target="_blank"
+        class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
+
           <i class="fa-brands fa-tiktok text-4xl text-gold mb-6"></i>
-          <div class="font-cinzel text-gold tracking-widest text-sm">TIKTOK</div>
-          <div class="text-ivory-dim mt-1">@danielbalasofficial</div>
-          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
-          <div class="text-xs text-gold/60 tracking-widest mt-2">Watch Now</div>
+
+          <div class="font-cinzel text-gold tracking-widest text-sm">
+            TIKTOK
+          </div>
+
+          <div class="text-ivory-dim mt-1">
+            @danielbalasofficial
+          </div>
+
         </a>
 
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/danielbalas15/" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
-          <i class="fa-brands fa-facebook-f text-4xl text-gold mb-6"></i>
-          <div class="font-cinzel text-gold tracking-widest text-sm">FACEBOOK</div>
-          <div class="text-ivory-dim mt-1">Daniel Balaș</div>
-          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
-          <div class="text-xs text-gold/60 tracking-widest mt-2">Follow</div>
-        </a>
-
-        <!-- YouTube -->
-        <a href="https://www.youtube.com/@danielbalas" target="_blank" class="group bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-xl transition-all hover:-translate-y-2">
-          <i class="fa-brands fa-youtube text-4xl text-gold mb-6"></i>
-          <div class="font-cinzel text-gold tracking-widest text-sm">YOUTUBE</div>
-          <div class="text-ivory-dim mt-1">@danielbalas</div>
-          <div class="mt-8 text-gold"><i class="fa-solid fa-arrow-up-right-from-square text-3xl"></i></div>
-          <div class="text-xs text-gold/60 tracking-widest mt-2">Subscribe</div>
-        </a>
       </div>
+
     </div>
+
   </section>
 
-  <!-- Meet & Greet + Fan Passes -->
+
+
+  <!-- MEET & GREET -->
   <section id="meetgreet" class="py-24 bg-obsidian-2">
+
     <div class="max-w-6xl mx-auto px-6">
+
       <div class="text-center mb-16">
-        <p class="text-gold tracking-widest text-sm font-semibold">ROYAL AUDIENCE</p>
-        <h2 class="cinzel text-5xl md:text-6xl font-bold mt-3">Meet & Greet with Daniel</h2>
+
+        <p class="text-gold tracking-widest text-sm font-semibold">
+          ROYAL AUDIENCE
+        </p>
+
+        <h2 class="cinzel text-5xl md:text-6xl font-bold mt-3">
+          Meet & Greet with Daniel
+        </h2>
+
       </div>
 
-      <!-- Event Banner -->
-      <div class="bg-gradient-to-br from-gold/5 to-transparent border border-gold/20 rounded-2xl p-10 md:p-14 flex flex-col md:flex-row gap-10 items-center mb-16">
-        <div class="bg-obsidian border border-gold/30 p-8 text-center rounded-xl min-w-[160px]">
-          <div class="text-gold text-sm tracking-widest font-semibold">JUNE</div>
-          <div class="text-7xl font-black text-ivory cinzel leading-none my-2">21</div>
-          <div class="text-ivory-dim text-sm">2025</div>
-        </div>
-        <div>
-          <h3 class="cinzel text-3xl font-bold mb-3">Royal Fan Evening</h3>
-          <div class="flex items-center gap-2 text-gold mb-4">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Bucharest, Romania — Grand Hall</span>
-          </div>
-          <p class="text-ivory-dim max-w-md">An exclusive evening with live Q&A, private photo sessions, autograph signings, and an intimate performance.</p>
-        </div>
-      </div>
 
-      <!-- Fan Passes -->
+      <!-- PASSES -->
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Silver -->
-        <div class="bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-2xl transition-all group">
+
+        <!-- SILVER -->
+        <div class="bg-obsidian-3 border border-gold/10 p-10 rounded-2xl">
+
           <i class="fa-solid fa-medal text-4xl text-gold mb-6"></i>
-          <div class="text-gold text-sm tracking-widest font-semibold">SILVER PASS</div>
-          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Courtier</div>
-          <div class="cormorant italic text-ivory-dim mb-8">Step through the palace gates</div>
-          
-          <div class="my-8 border-b border-gold/10 pb-8">
+
+          <div class="text-gold text-sm tracking-widest font-semibold">
+            SILVER PASS
+          </div>
+
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">
+            The Courtier
+          </div>
+
+          <div class="my-8">
             <span class="text-gold text-2xl">$</span>
             <span class="text-6xl font-black cinzel">300</span>
-            <span class="text-ivory-dim">/event</span>
           </div>
 
-          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> General admission</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Group photo</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Signed poster</li>
-          </ul>
-          <button onclick="openChat()" class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">CLAIM PASS</button>
+          <button onclick="openChat()"
+          class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">
+            CLAIM PASS
+          </button>
+
         </div>
 
-        <!-- Gold (Featured) -->
-        <div class="bg-gradient-to-b from-gold/10 to-obsidian-3 border-2 border-gold p-10 rounded-2xl relative scale-105 shadow-2xl shadow-gold/20">
-          <div class="absolute -top-4 right-6 bg-gradient-to-r from-gold to-amber-600 text-obsidian text-xs font-bold px-8 py-1 rotate-12">MOST POPULAR</div>
-          
+
+
+        <!-- GOLD -->
+        <div class="bg-gradient-to-b from-gold/10 to-obsidian-3 border-2 border-gold p-10 rounded-2xl scale-105">
+
           <i class="fa-solid fa-crown text-4xl text-gold mb-6"></i>
-          <div class="text-gold text-sm tracking-widest font-semibold">GOLD PASS</div>
-          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Noble</div>
-          <div class="cormorant italic text-ivory-dim mb-8">Command a royal audience</div>
-          
-          <div class="my-8 border-b border-gold/10 pb-8">
+
+          <div class="text-gold text-sm tracking-widest font-semibold">
+            GOLD PASS
+          </div>
+
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">
+            The Noble
+          </div>
+
+          <div class="my-8">
             <span class="text-gold text-2xl">$</span>
             <span class="text-6xl font-black cinzel">550</span>
-            <span class="text-ivory-dim">/event</span>
           </div>
 
-          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Priority entry</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Private 1-on-1 photo</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> VIP lounge access</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Exclusive Q&A</li>
-          </ul>
-          <button onclick="openChat()" class="w-full py-4 bg-gradient-to-r from-gold to-amber-600 text-obsidian font-cinzel tracking-widest text-sm hover:scale-105 transition-all">CLAIM GOLD PASS</button>
+          <button onclick="openChat()"
+          class="w-full py-4 bg-gradient-to-r from-gold to-amber-600 text-obsidian font-cinzel tracking-widest text-sm hover:scale-105 transition-all">
+            CLAIM GOLD PASS
+          </button>
+
         </div>
 
-        <!-- Diamond -->
-        <div class="bg-obsidian-3 border border-gold/10 hover:border-gold/40 p-10 rounded-2xl transition-all group">
+
+
+        <!-- DIAMOND -->
+        <div class="bg-obsidian-3 border border-gold/10 p-10 rounded-2xl">
+
           <i class="fa-solid fa-gem text-4xl text-gold mb-6"></i>
-          <div class="text-gold text-sm tracking-widest font-semibold">DIAMOND PASS</div>
-          <div class="cinzel text-3xl font-bold mt-2 mb-1">The Royal</div>
-          <div class="cormorant italic text-ivory-dim mb-8">Reign beside the king</div>
-          
-          <div class="my-8 border-b border-gold/10 pb-8">
+
+          <div class="text-gold text-sm tracking-widest font-semibold">
+            DIAMOND PASS
+          </div>
+
+          <div class="cinzel text-3xl font-bold mt-2 mb-1">
+            The Royal
+          </div>
+
+          <div class="my-8">
             <span class="text-gold text-2xl">$</span>
             <span class="text-6xl font-black cinzel">900</span>
-            <span class="text-ivory-dim">/event</span>
           </div>
 
-          <ul class="space-y-4 text-sm text-ivory-dim mb-10">
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> All Gold benefits</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> 10-min private talk</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1i> Personalized video</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i> Limited edition gift</li>
-          </ul>
-          <button onclick="openChat()" class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">CLAIM PASS</button>
+          <button onclick="openChat()"
+          class="w-full py-4 border border-gold/60 hover:bg-gold hover:text-obsidian font-cinzel tracking-widest text-sm transition-all">
+            CLAIM PASS
+          </button>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- Quote -->
-  <section class="py-28 text-center px-6">
-    <div class="max-w-3xl mx-auto">
-      <p class="cormorant text-4xl md:text-5xl italic leading-relaxed">"Iubesc darul cel mai de preț — <span class="text-gold">Viața!</span>"</p>
-      <p class="text-gold tracking-widest mt-8 text-sm font-semibold">— Daniel Balaș</p>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-obsidian-2 border-t border-gold/10 py-12 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-      <div class="flex items-center gap-3 text-gold cinzel text-lg">
-        <i class="fa-solid fa-crown"></i> Daniel Balaș
-      </div>
-      <div class="flex gap-8 text-ivory-dim">
-        <a href="#about" class="hover:text-gold">About</a>
-        <a href="#socials" class="hover:text-gold">Socials</a>
-        <a href="#meetgreet" class="hover:text-gold">Meet & Greet</a>
-      </div>
-      <div class="text-ivory-dim/70 text-xs">© 2025 Daniel Balaș • Un Suflet Călător</div>
-    </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-obsidian-2 border-t border-gold/10 py-12 px-6 text-center text-sm text-ivory-dim">
+    © 2025 Daniel Balaș • Un Suflet Călător
   </footer>
 
-  <!-- Smartsupp Live Chat -->
+
+
+  <!-- SMARTSUPP LIVE CHAT -->
   <script type="text/javascript">
+
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '6748f4bf4ee1856e37c46ef3e1bac04a71202e10';
-    window.smartsupp||(function(d){
-      var s,c,o=smartsupp=function(){o._.push(arguments)};o._=[];
-      s=d.getElementsByTagName('script')[0];
-      c=d.createElement('script');
-      c.type='text/javascript';c.charset='utf-8';c.async=true;
-      c.src='https://www.smartsuppchat.com/loader.js?';
-      s.parentNode.insertBefore(c,s);
-    })(document);
-  </script>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '6748f4bf4ee1856e37c46ef3e1bac04a71202e10';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
 
-  <script>
+    window.smartsupp || (function(d) {
+
+      var s, c,
+      o = smartsupp = function() {
+        o._.push(arguments);
+      };
+
+      o._ = [];
+
+      s = d.getElementsByTagName('script')[0];
+      c = d.createElement('script');
+
+      c.type = 'text/javascript';
+      c.charset = 'utf-8';
+      c.async = true;
+
+      c.src = 'https://www.smartsuppchat.com/loader.js?';
+
+      s.parentNode.insertBefore(c, s);
+
+    })(document);
+
+
+
     function openChat() {
-      if (typeof smartsupp === 'function') {
+
+      if (typeof smartsupp !== 'undefined') {
+
         smartsupp('chat:open');
+
       } else {
-        alert("Live chat is loading... Please wait a moment.");
+
+        alert("Chat is loading...");
+
       }
+
     }
 
-    // Make hero "BOOK MEET & GREET" also open chat
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroBookBtn = document.querySelector('a[href="#meetgreet"]');
-      if (heroBookBtn) {
-        heroBookBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          openChat();
-        });
-      }
-    });
   </script>
+
 </body>
 </html>
